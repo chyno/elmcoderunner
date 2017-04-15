@@ -43,5 +43,5 @@ main =
   { init = init
   , view = view
   , update = update
-  , subscriptions = subscriptions
+  , subscriptions = \_ -> Sub.none
   }
