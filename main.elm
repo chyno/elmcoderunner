@@ -10,6 +10,17 @@ type alias Model = List Kata
 
 type Msg
     = NoOp
+    | Add
+    
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+     case msg of
+        NoOp ->
+            model ! []
+
+        Add ->
+          ({name = "New kata", code = "var x = 100;", test = "assert(x ==1);" }::model) ! []
 
 defaultModel : Model
 defaultModel = 
@@ -22,22 +33,22 @@ init :  ( Model, Cmd Msg )
 init =
   defaultModel  ! []
 
-displaykatas :  Model -> Html.Html msg
-displaykatas kts = 
-    kts
-       |> List.map (\l -> li [] [ text l.name ])
-       |> ul []
- 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-   ( model, Cmd.none ) 
+
 
 view : Model -> Html Msg
 view model =
-    ul []
+    div []
+      [
+          h1 [] [text "Current Katas"],
+          ul []
       (model |>
-        List.map (\x -> li [] [text x.name]))
+        List.map (\x -> li [] [text x.name])),
+        button
+          [onClick (Add)]
+          [text "Add"]
+
+      ]   
     
 main =
   Html.program  
