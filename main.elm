@@ -33,7 +33,17 @@ update msg model =
           ! []
         SetTest kt txt ->
           { model
+                | kata = Just (Kata kt.id kt.test kt.code txt)
+          }
+          ! []
+        SetName kt txt ->
+          { model
                 | kata = Just (Kata kt.id kt.name kt.code txt)
+          }
+          ! []
+        SetCode kt txt ->
+          { model
+                | kata = Just (Kata kt.id kt.code kt.code txt)
           }
           ! []
              
