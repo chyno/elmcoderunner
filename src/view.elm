@@ -4,12 +4,14 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Models exposing (..)
-
+import Views.Static exposing (..)
 view : Model -> Html Msg
 view model =
   div []
   [
     h1 [] [text "Current Katas"],
+    Views.Static.header,
+
      div [ class "form-group" ]
       [ 
         case  model.kata  of
