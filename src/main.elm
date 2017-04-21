@@ -1,5 +1,3 @@
-import Task
-import String
 import Models exposing (..)
 import View exposing (..)
 import Html exposing (..)
@@ -25,6 +23,11 @@ update msg model =
                 katas = (updateKata model.katas kt)
           }
           ! []
+        Delete kt ->
+          { model
+                | katas = (List.filter (\k -> not(k.id == kt.id))  (updateKata model.katas kt))
+          }
+          ! []
         Cancel   ->
           { model
                 | kata = Nothing
@@ -33,17 +36,22 @@ update msg model =
           ! []
         SetTest kt txt ->
           { model
-                | kata = Just (Kata kt.id kt.name kt.code txt)
+                | kata = Just (Kata kt.id kt.name kt.code txt kt.description)
           }
           ! []
         SetName kt txt ->
           { model
-                | kata = Just (Kata kt.id txt kt.code kt.test)
+                | kata = Just (Kata kt.id txt kt.code kt.test kt.description)
           }
           ! []
         SetCode kt txt ->
           { model
-                | kata = Just (Kata kt.id kt.name txt kt.test)
+                | kata = Just (Kata kt.id kt.name txt kt.test kt.description)
+          }
+          ! []
+        SetDescription kt txt ->
+          { model
+                | kata = Just (Kata kt.id kt.name kt.code kt.test txt)
           }
           ! []
              
@@ -51,7 +59,7 @@ init :  ( Model, Cmd Msg )
 init =
   defaultModel  ! []
 
-    
+main : Program Never Model Msg  
 main =
   Html.program    
   { init = init
