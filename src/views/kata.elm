@@ -1,8 +1,24 @@
 module Views.Kata exposing (..)
 import Models exposing (..)
+import CodeMirror exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+
+inputStyle =
+  style [ ( "width", "100%" ), ( "margin-bottom", "10px" ) ]
+
+
+cmConfig : Model -> CmConfig
+cmConfig model =
+  { theme = "monokai"
+  , mode = "elm"
+  , height = "auto"
+  , lineNumbers = True
+  , lineWrapping = True
+  }
+
+ 
 
 katadetailsview :   Kata -> Html.Html Msg
 katadetailsview kata =
@@ -24,6 +40,8 @@ katadetailsview kata =
        label  [ ] [ text "Instructions" ] ,
        textarea [class "form-control", value kata.test, onInput (SetDescription kata)][]
        ],
+
+      -- codeMirror cmConfig   (Signal.message add << CodeChange) kata.code,
 
        div [class "form-group"][
        button

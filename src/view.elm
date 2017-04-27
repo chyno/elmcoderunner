@@ -1,11 +1,13 @@
 module View exposing (..)
 import Html exposing (..)
-import Markdown exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Models exposing (..)
 import Views.Static exposing (..)
 import Views.Kata exposing (..)
+
+
+
 view : Model -> Html Msg
 view model =
   div []
@@ -13,7 +15,6 @@ view model =
    
     Views.Static.header,
     h1 [] [text "Current Katas"],
-    testcontent,
     div [class "jumbotron"] [
       div [class "container"]
       [
@@ -67,17 +68,3 @@ kataview kata =
     
   ]
   
-testcontent : Html msg
-testcontent =
-   Markdown.toHtml [class "content"] """
-
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
-```
-
-"""
-       

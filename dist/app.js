@@ -8558,60 +8558,6 @@ var _elm_lang$dom$Dom$NotFound = function (a) {
 	return {ctor: 'NotFound', _0: a};
 };
 
-var _elm_lang$elm_architecture_tutorial$Models$defaultkata = {id: 0, name: 'new', code: 'var foo = null', test: 'foo is null', description: 'default desc'};
-var _elm_lang$elm_architecture_tutorial$Models$defaultModel = {
-	katas: {
-		ctor: '::',
-		_0: {id: 0, name: 'kata 1', code: 'var x = 1;', test: 'assert(x ==1);', description: 'desc 1'},
-		_1: {
-			ctor: '::',
-			_0: {id: 1, name: 'kata 2', code: 'var y = 1;', test: 'assert(y ==2);', description: 'desc 2'},
-			_1: {
-				ctor: '::',
-				_0: {id: 2, name: 'kata 3', code: 'var z = 3;', test: 'assert(y ==3);', description: 'desc 3'},
-				_1: {ctor: '[]'}
-			}
-		}
-	},
-	kata: _elm_lang$core$Maybe$Nothing
-};
-var _elm_lang$elm_architecture_tutorial$Models$Kata = F5(
-	function (a, b, c, d, e) {
-		return {id: a, name: b, code: c, test: d, description: e};
-	});
-var _elm_lang$elm_architecture_tutorial$Models$Model = F2(
-	function (a, b) {
-		return {katas: a, kata: b};
-	});
-var _elm_lang$elm_architecture_tutorial$Models$SetDescription = F2(
-	function (a, b) {
-		return {ctor: 'SetDescription', _0: a, _1: b};
-	});
-var _elm_lang$elm_architecture_tutorial$Models$SetTest = F2(
-	function (a, b) {
-		return {ctor: 'SetTest', _0: a, _1: b};
-	});
-var _elm_lang$elm_architecture_tutorial$Models$SetCode = F2(
-	function (a, b) {
-		return {ctor: 'SetCode', _0: a, _1: b};
-	});
-var _elm_lang$elm_architecture_tutorial$Models$SetName = F2(
-	function (a, b) {
-		return {ctor: 'SetName', _0: a, _1: b};
-	});
-var _elm_lang$elm_architecture_tutorial$Models$Cancel = {ctor: 'Cancel'};
-var _elm_lang$elm_architecture_tutorial$Models$Delete = function (a) {
-	return {ctor: 'Delete', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Models$Save = function (a) {
-	return {ctor: 'Save', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Models$Edit = function (a) {
-	return {ctor: 'Edit', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Models$Add = {ctor: 'Add'};
-var _elm_lang$elm_architecture_tutorial$Models$NoOp = {ctor: 'NoOp'};
-
 var _elm_lang$virtual_dom$VirtualDom_Debug$wrap;
 var _elm_lang$virtual_dom$VirtualDom_Debug$wrapWithFlags;
 
@@ -10650,6 +10596,82 @@ var _elm_lang$html$Html$summary = _elm_lang$html$Html$node('summary');
 var _elm_lang$html$Html$menuitem = _elm_lang$html$Html$node('menuitem');
 var _elm_lang$html$Html$menu = _elm_lang$html$Html$node('menu');
 
+var _elm_lang$elm_architecture_tutorial$Models$defaultkata = {id: 0, name: 'new', code: 'var foo = null', test: 'foo is null', description: 'default desc'};
+var _elm_lang$elm_architecture_tutorial$Models$defaultModel = {
+	katas: {
+		ctor: '::',
+		_0: {id: 0, name: 'kata 1', code: 'var x = 1;', test: 'assert(x ==1);', description: 'desc 1'},
+		_1: {
+			ctor: '::',
+			_0: {id: 1, name: 'kata 2', code: 'var y = 1;', test: 'assert(y ==2);', description: 'desc 2'},
+			_1: {
+				ctor: '::',
+				_0: {id: 2, name: 'kata 3', code: 'var z = 3;', test: 'assert(y ==3);', description: 'desc 3'},
+				_1: {ctor: '[]'}
+			}
+		}
+	},
+	kata: _elm_lang$core$Maybe$Nothing
+};
+var _elm_lang$elm_architecture_tutorial$Models$Kata = F5(
+	function (a, b, c, d, e) {
+		return {id: a, name: b, code: c, test: d, description: e};
+	});
+var _elm_lang$elm_architecture_tutorial$Models$Model = F2(
+	function (a, b) {
+		return {katas: a, kata: b};
+	});
+var _elm_lang$elm_architecture_tutorial$Models$SetDescription = F2(
+	function (a, b) {
+		return {ctor: 'SetDescription', _0: a, _1: b};
+	});
+var _elm_lang$elm_architecture_tutorial$Models$SetTest = F2(
+	function (a, b) {
+		return {ctor: 'SetTest', _0: a, _1: b};
+	});
+var _elm_lang$elm_architecture_tutorial$Models$SetCode = F2(
+	function (a, b) {
+		return {ctor: 'SetCode', _0: a, _1: b};
+	});
+var _elm_lang$elm_architecture_tutorial$Models$SetName = F2(
+	function (a, b) {
+		return {ctor: 'SetName', _0: a, _1: b};
+	});
+var _elm_lang$elm_architecture_tutorial$Models$Cancel = {ctor: 'Cancel'};
+var _elm_lang$elm_architecture_tutorial$Models$Delete = function (a) {
+	return {ctor: 'Delete', _0: a};
+};
+var _elm_lang$elm_architecture_tutorial$Models$Save = function (a) {
+	return {ctor: 'Save', _0: a};
+};
+var _elm_lang$elm_architecture_tutorial$Models$Edit = function (a) {
+	return {ctor: 'Edit', _0: a};
+};
+var _elm_lang$elm_architecture_tutorial$Models$Add = {ctor: 'Add'};
+var _elm_lang$elm_architecture_tutorial$Models$NoOp = {ctor: 'NoOp'};
+
+var _elm_lang$elm_architecture_tutorial$CodeMirror$codeMirror = function (config) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('code mirror text'),
+			_1: {ctor: '[]'}
+		});
+};
+var _elm_lang$elm_architecture_tutorial$CodeMirror$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _elm_lang$elm_architecture_tutorial$CodeMirror$Config = F2(
+	function (a, b) {
+		return {value: a, cmConfig: b};
+	});
+var _elm_lang$elm_architecture_tutorial$CodeMirror$CmConfig = F5(
+	function (a, b, c, d, e) {
+		return {theme: a, mode: b, height: c, lineNumbers: d, lineWrapping: e};
+	});
+
 var _elm_lang$html$Html_Attributes$map = _elm_lang$virtual_dom$VirtualDom$mapProperty;
 var _elm_lang$html$Html_Attributes$attribute = _elm_lang$virtual_dom$VirtualDom$attribute;
 var _elm_lang$html$Html_Attributes$contextmenu = function (value) {
@@ -11539,6 +11561,19 @@ var _elm_lang$elm_architecture_tutorial$Views_Kata$katadetailsview = function (k
 			}
 		});
 };
+var _elm_lang$elm_architecture_tutorial$Views_Kata$cmConfig = function (model) {
+	return {theme: 'monokai', mode: 'elm', height: 'auto', lineNumbers: true, lineWrapping: true};
+};
+var _elm_lang$elm_architecture_tutorial$Views_Kata$inputStyle = _elm_lang$html$Html_Attributes$style(
+	{
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'width', _1: '100%'},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'margin-bottom', _1: '10px'},
+			_1: {ctor: '[]'}
+		}
+	});
 
 var _elm_lang$elm_architecture_tutorial$View$kataview = function (kata) {
 	return A2(
@@ -11848,11 +11883,10 @@ var _elm_lang$elm_architecture_tutorial$Main$update = F2(
 					_elm_lang$core$Native_Utils.update(
 						model,
 						{
-							kata: _elm_lang$core$Maybe$Nothing,
 							katas: A2(
 								_elm_lang$core$List$filter,
 								function (k) {
-									return _elm_lang$core$Native_Utils.cmp(k.id, _p1.id) < 1;
+									return !_elm_lang$core$Native_Utils.eq(k.id, _p1.id);
 								},
 								A2(_elm_lang$elm_architecture_tutorial$Main$updateKata, model.katas, _p1))
 						}),
@@ -11919,6 +11953,9 @@ var _elm_lang$elm_architecture_tutorial$Main$main = _elm_lang$html$Html$program(
 			return _elm_lang$core$Platform_Sub$none;
 		}
 	})();
+var _elm_lang$elm_architecture_tutorial$Main$subscriptions = function (kata) {
+	return _elm_lang$core$Platform_Sub$none;
+};
 
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};

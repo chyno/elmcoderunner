@@ -3,6 +3,7 @@
     "summary": "Examples of The Elm Architecture",
     "repository": "https://github.com/elm-lang/elm-architecture-tutorial.git",
     "license": "BSD3",
+    "native-modules" : false,
     "source-directories": [
         "src"
     ],
