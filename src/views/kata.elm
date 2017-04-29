@@ -1,6 +1,5 @@
 module Views.Kata exposing (..)
 import Models exposing (..)
-import CodeMirror exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
@@ -9,21 +8,11 @@ inputStyle =
   style [ ( "width", "100%" ), ( "margin-bottom", "10px" ) ]
 
 
-cmConfig : Model -> CmConfig
-cmConfig model =
-  { theme = "monokai"
-  , mode = "elm"
-  , height = "auto"
-  , lineNumbers = True
-  , lineWrapping = True
-  }
-
- 
-
 katadetailsview :   Kata -> Html.Html Msg
 katadetailsview kata =
     div []
     [
+       
        div [class "form-group"][
        label  [  ] [ text "Name" ] ,
        input [ class "form-control", value kata.name, onInput (SetName kata)][]

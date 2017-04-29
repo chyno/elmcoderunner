@@ -2,9 +2,7 @@ import Models exposing (..)
 import View exposing (..)
 import Html exposing (..)
 
-subscriptions : Kata -> Sub Msg
-subscriptions kata =
-  Sub.none
+ 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =

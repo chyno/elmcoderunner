@@ -5,14 +5,14 @@ import Html.Events exposing (..)
 import Models exposing (..)
 import Views.Static exposing (..)
 import Views.Kata exposing (..)
-
+import Display exposing (..)
 
 
 view : Model -> Html Msg
 view model =
   div []
   [
-   
+    textarea [][text "code goes her"],
     Views.Static.header,
     h1 [] [text "Current Katas"],
     div [class "jumbotron"] [
